@@ -51,6 +51,8 @@ router.post("/register", async (req, res) => {
   try {
     const passwordHash = await bcrypt.hash(password, 10);
 
+    console.log("Creating user with email:", email);
+
     const user = await createUser({
       name,
       email,
